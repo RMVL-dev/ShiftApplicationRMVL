@@ -13,8 +13,8 @@ import javax.inject.Singleton
         ActivityModule::class,
         ApplicationModule::class,
         NetworkModule::class,
-        ViewModelModule::class,
-        AndroidInjectionModule::class
+        AndroidInjectionModule::class,
+        FragmentModule::class
     ]
 )
 @Singleton

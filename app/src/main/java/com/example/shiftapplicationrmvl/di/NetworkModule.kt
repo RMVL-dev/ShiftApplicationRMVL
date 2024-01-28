@@ -19,9 +19,7 @@ class NetworkModule {
 
     @Provides
     fun provideOkHttp() =
-        OkHttpClient.Builder().apply {
-
-        }
+        OkHttpClient.Builder()
             .connectTimeout(20000L, TimeUnit.MILLISECONDS)
             .readTimeout(20000L, TimeUnit.MILLISECONDS)
             .writeTimeout(20000L, TimeUnit.MILLISECONDS)
@@ -31,14 +29,14 @@ class NetworkModule {
     fun provideRetrofit(
         okHttpClient:OkHttpClient,
         gson: Gson
-    ): Retrofit? = Retrofit.Builder()
+    ) = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(okHttpClient)
         .build()
 
     @Provides
-    fun provideGson():Gson =GsonBuilder().create()
+    fun provideGson():Gson = GsonBuilder().create()
 
     @Provides
     fun provideRandomUserService(retrofit: Retrofit): RandomUserService =

@@ -1,14 +1,13 @@
 package com.example.shiftapplicationrmvl.di
 
-import com.example.shiftapplicationrmvl.MainActivity
+import com.example.shiftapplicationrmvl.ui.users.UsersFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module(includes = [ViewModelModule::class])
-abstract class ActivityModule {
+abstract class FragmentModule {
 
     @ContributesAndroidInjector
-    abstract fun provideMainActivity():MainActivity
-
+    abstract fun provideUsersFragment():UsersFragment
 
 }
