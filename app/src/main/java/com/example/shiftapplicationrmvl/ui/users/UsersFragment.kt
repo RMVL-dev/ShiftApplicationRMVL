@@ -8,7 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.createViewModelLazy
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.shiftapplicationrmvl.data.User
+import com.example.shiftapplicationrmvl.data.converter.Converter
+import com.example.shiftapplicationrmvl.data.responseState.ResponseState
 import com.example.shiftapplicationrmvl.databinding.FragmentUsersBinding
+import com.example.shiftapplicationrmvl.ui.users.recyclerView.UsersAdapter
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -41,7 +46,38 @@ class UsersFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        usersViewModel.getRandomUser()
+
+        binding.swToRef.setOnRefreshListener {
+            usersViewModel.getRandomUser()
+            usersViewModel.getAllUsers()
+            binding.swToRef.isRefreshing = false
+        }
+
+        usersViewModel.getAllUsers()
+
+        usersViewModel.user.observe(viewLifecycleOwner){value ->
+            when(value){
+                ResponseState.Error -> {}
+                ResponseState.Loading -> {}
+                is ResponseState.Success -> {
+
+                }
+            }
+        }
+
+        usersViewModel.listOfUsers.observe(viewLifecycleOwner){list->
+            if (!list.isNullOrEmpty()){
+                val adapter = UsersAdapter(list)
+                adapter.onClick = {position ->
+                    Converter().toJson(list[position])?.let {
+                        findNavController().navigate(
+                            UsersFragmentDirections.actionUsersFragmentToDetailsFragment(it)
+                        )
+                    }
+                }
+                binding.recyclerViewUsers.adapter = adapter
+            }
+        }
     }
 
     override fun onDestroyView() {

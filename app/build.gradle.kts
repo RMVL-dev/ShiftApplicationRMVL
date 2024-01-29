@@ -42,6 +42,8 @@ android {
 
 dependencies {
 
+    //swipe-to-refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
     //navigation
     val nav_version = "2.7.4"

@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface RandomUserService {
 
-    @GET
+    @GET(" ")
     suspend fun getRandomUser(): UsersData
 
 }
