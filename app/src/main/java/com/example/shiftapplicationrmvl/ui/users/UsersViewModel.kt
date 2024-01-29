@@ -1,5 +1,6 @@
 package com.example.shiftapplicationrmvl.ui.users
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -55,4 +56,8 @@ class UsersViewModel @Inject constructor(
         _listOfUsers.value = list
     }
 
+    fun clearList(){
+        sharedPreferences.clear()
+        _listOfUsers.value = emptyList()
+    }
 }

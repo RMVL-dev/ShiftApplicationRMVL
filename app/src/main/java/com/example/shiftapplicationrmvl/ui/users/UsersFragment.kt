@@ -2,6 +2,7 @@ package com.example.shiftapplicationrmvl.ui.users
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,22 +48,20 @@ class UsersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.swToRef.setOnRefreshListener {
-            usersViewModel.getRandomUser()
-            usersViewModel.getAllUsers()
-            binding.swToRef.isRefreshing = false
-        }
-
         usersViewModel.getAllUsers()
 
-        usersViewModel.user.observe(viewLifecycleOwner){value ->
-            when(value){
-                ResponseState.Error -> {}
-                ResponseState.Loading -> {}
-                is ResponseState.Success -> {
+        binding.btUpdate.setOnClickListener {
+            usersViewModel.getAllUsers()
+        }
 
-                }
-            }
+        binding.btAddNewUser.setOnClickListener {
+            usersViewModel.getRandomUser()
+            usersViewModel.getAllUsers()
+        }
+
+        binding.btClear.setOnClickListener {
+            usersViewModel.clearList()
+            usersViewModel.getAllUsers()
         }
 
         usersViewModel.listOfUsers.observe(viewLifecycleOwner){list->
@@ -79,6 +78,7 @@ class UsersFragment : Fragment() {
             }
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

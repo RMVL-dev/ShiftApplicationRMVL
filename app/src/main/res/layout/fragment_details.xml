@@ -25,33 +25,40 @@
             android:id="@+id/details_firstname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
             
             tools:text="ms John"
             android:layout_below="@+id/details_picture"
+            android:layout_marginTop="@dimen/margin"
             />
         
         <TextView
             android:id="@+id/details_lastname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
             
             tools:text = "Average"
             android:layout_below="@+id/details_firstname"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text = "male"
             android:layout_below="@+id/details_lastname"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_national"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text="US"
             android:layout_marginStart="5dp"
@@ -63,53 +70,62 @@
             android:id="@+id/details_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
             
             tools:text="phone: 79012801405"
             android:layout_below="@+id/details_gender"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_cell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
             tools:text = "cell: (489) 330-2385"
             android:layout_below="@+id/details_phone_number"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
 
             tools:text = "example@email.com"
             android:layout_below="@+id/details_cell"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_address_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
 
             tools:text="United States"
             android:layout_below="@+id/details_email"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_address_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
@@ -124,18 +140,21 @@
             android:id="@+id/details_address_street"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
 
             tools:text="Valwood Pkwy"
             android:layout_below="@+id/details_address_country"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_address_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             android:clickable="true"
             android:focusable="true"
@@ -150,9 +169,7 @@
             android:id="@+id/details_address_postcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:clickable="true"
-            android:focusable="true"
+            android:textAppearance="@style/TextBody"
 
             tools:text = "63104"
             android:layout_marginStart="5dp"
@@ -164,34 +181,41 @@
             android:id="@+id/details_data_of_birthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text = "1992-03-08T15:13:16.688Z"
             android:layout_below="@id/details_address_street"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text="30"
             android:layout_marginStart="5dp"
             android:layout_alignTop="@+id/details_data_of_birthday"
-            android:layout_toEndOf="@id/details_data_of_birthday"/>
+            android:layout_toEndOf="@id/details_data_of_birthday"
+            />
 
         <TextView
             android:id="@+id/details_registered_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text = "2007-07-09T05:51:59.390Z"
             android:layout_below="@+id/details_data_of_birthday"
+            android:layout_marginTop="@dimen/margin"
             />
 
         <TextView
             android:id="@+id/details_registered_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextBody"
 
             tools:text = "14"
             android:layout_marginStart="5dp"
