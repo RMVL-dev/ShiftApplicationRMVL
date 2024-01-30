@@ -24,8 +24,4 @@ class SharedPreferencesReq @Inject constructor(
     var users: String?
         set(value) = sharedPref.edit{ putString(PREF_USERS_LIST, value) }
         get() = sharedPref.getString(PREF_USERS_LIST, "")
-
-    fun clear(){
-        users = ""
-    }
 }

@@ -51,18 +51,9 @@ class UsersFragment : Fragment() {
         usersViewModel.getAllUsers()
 
         binding.btUpdate.setOnClickListener {
-            usersViewModel.getAllUsers()
-        }
-
-        binding.btAddNewUser.setOnClickListener {
             usersViewModel.getRandomUser()
-            usersViewModel.getAllUsers()
         }
 
-        binding.btClear.setOnClickListener {
-            usersViewModel.clearList()
-            usersViewModel.getAllUsers()
-        }
 
         usersViewModel.listOfUsers.observe(viewLifecycleOwner){list->
             if (!list.isNullOrEmpty()){

@@ -48,6 +48,7 @@ class UsersViewModel @Inject constructor(
                 list.toList()
                 sharedPreferences.users = converter.listToJson(list)
             }
+            getAllUsers()
         }
     }
 
@@ -56,8 +57,4 @@ class UsersViewModel @Inject constructor(
         _listOfUsers.value = list
     }
 
-    fun clearList(){
-        sharedPreferences.clear()
-        _listOfUsers.value = emptyList()
-    }
 }
